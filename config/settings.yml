@@ -19,3 +19,5 @@ plugins:
     default: ''
   ldap_filter:
     default: ''
+  ldap_title:
+    default: 'Login com Acesso.IFPE'
