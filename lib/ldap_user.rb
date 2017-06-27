@@ -40,5 +40,6 @@ class LDAPUser
   def replace_username(nickname)
     first = nickname.split("@").first
     last = nickname.split("@").last.split(".").first
-    return first + "." + last 
+    return first + "." + last
+  end 
 end
