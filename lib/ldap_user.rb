@@ -4,7 +4,7 @@ class LDAPUser
   def initialize (auth_info)
     @name = auth_info[:name]
     @email = auth_info[:email]
-    @username = auth_info[:nickname]
+    @username = replace_username(auth_info[:email])
     @user = User.find_by_email(@email)
     create_user_groups(auth_info[:groups]) unless self.account_exists?
   end
@@ -24,6 +24,7 @@ class LDAPUser
     return !@user.nil?
   end
 
+
   private
   def create_user_groups(user_groups)
     return if user_groups.nil?
@@ -35,4 +36,9 @@ class LDAPUser
       @user.groups << group unless group.nil?
     end
   end
+
+  def replace_username(nickname)
+    first = nickname.split("@").first
+    last = nickname.split("@").last.split(".").first
+    return first + "." + last 
 end
