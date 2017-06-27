@@ -74,8 +74,8 @@ class LDAPAuthenticator < ::Auth::Authenticator
   end
 end
 
-auth_provider title: 'Login with LDAP',
-  message: 'Log in with your LDAP credentials',
+auth_provider title: 'Login via Acesso IFPE',
+  message: 'Entre com suas credenciais do IFPE (CPF)',
   frame_width: 920,
   frame_height: 800,
   authenticator: LDAPAuthenticator.new
