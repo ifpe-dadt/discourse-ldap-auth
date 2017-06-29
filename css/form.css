@@ -33,8 +33,33 @@ input {
     line-height: 18px;
 }
 
-#username {
-    margin-left: 27px
+label[for=username]
+{
+    visibility: hidden;
+}
+
+label[for=username]::before
+{
+    visibility: visible;
+    content: "CPF";
+}
+label[for=password]
+{
+    visibility: hidden;
+}
+
+label[for=password]::before
+{
+    visibility: visible;
+   
+    content: "Senha";
+}
+
+#username{
+ margin-left: -40px;
+}
+#password{
+ margin-left: -65px;
 }
 
 button {
@@ -46,6 +71,11 @@ button {
     font-size: 1.143em;
     line-height: 15px;
     display: block;
+}
+
+button::after {
+   visibilit: visible;
+  content: " (Entrar)";
 }
 
 label:before {
